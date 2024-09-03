@@ -1,1 +1,309 @@
-{}
+{
+    // Utility tools
+    "signal": {
+        "prefix": "signal",
+        "body": "signal",
+        "description": "Send a signal globally. This can wake up processes if there are any waiting on the same signal name. Examples of usage: local signal = \"\" or signal(string params)."
+    },
+    "waitSignal(string name)": {
+        "prefix": "waitsignal",
+        "body": "waitsignal()",
+        "description": "Send a signal globally. This can wake up processes if there are any waiting on the same signal name."
+    },
+    "runProcess(function func)": {
+        "prefix": "runProcess",
+        "body": [
+            "runProcess(function()",
+            "    ${1}",
+            "end)"
+        ],
+        "description": "Start a new process."
+    },
+    "killProcesses()": {
+        "prefix": "killProcesses",
+        "body": "killProcesses()",
+        "description": "Stop and remove all processes."
+    },
+    "waitSeconds(float seconds)": {
+        "prefix": "waitSeconds",
+        "body": "waitSeconds(${1})",
+        "description": "Wait until some time has passed (to be used from inside a process)."
+    },
+    "getprops(table object)": {
+        "prefix": "getprops",
+        "body": "getprops(${1})",
+        "description": "Get reflection data from object."
+    },
+    "len(table object)": {
+        "prefix": "len",
+        "body": "len(${1})",
+        "description": "Get the length of a table."
+    },
+    "backlog_post_list(table list)": {
+        "prefix": "backlog_post_list",
+        "body": "backlog_post_list(${1})",
+        "description": "Post table contents to the backlog."
+    },
+    "fixedupdate()": {
+        "prefix": "fixedupdate",
+        "body": "fixedupdate()",
+        "description": "Wait for a fixed update step to be called (to be used from inside a process)."
+    },
+    "update()": {
+        "prefix": "update",
+        "body": "update()",
+        "description": "Wait for variable update step to be called (to be used from inside a process)."
+    },
+    "render()": {
+        "prefix": "render",
+        "body": "render()",
+        "description": "Wait for a render step to be called (to be used from inside a process)."
+    },
+    "getDeltaTime()": {
+        "prefix": "getDeltaTime",
+        "body": "getDeltaTime()",
+        "description": "Returns the delta time in seconds (time passed since previous update())."
+    },
+    "math.lerp(float a, b, t)": {
+        "prefix": "math.lerp",
+        "body": "math.lerp(${1})",
+        "description": "Linear interpolation."
+    },
+    "math.clamp(float x, min, max)": {
+        "prefix": "math.clamp",
+        "body": "math.clamp(${1})",
+        "description": "Clamp x between min and max."
+    },
+    "math.saturate(float x)": {
+        "prefix": "math.saturate",
+        "body": "math.saturate(${1})",
+        "description": "Clamp x between 0 and 1."
+    },
+    "dobinaryfile(string filename)": {
+        "prefix": "dobinaryfile",
+        "body": "dobinaryfile(${1})",
+        "description": "Executes a binary LUA file."
+    },
+    "compilebinaryfile(string filename_src, dilename_dst)": {
+        "prefix": "compilebinaryfile",
+        "body": "compilebinaryfile(${1})",
+        "description": "Compiles a text LUA file (filename_src) into a binary LUA file (filename_dst)."
+    },
+    // Backlog
+    "backlog_clear()": {
+        "prefix": "backlog_clear",
+        "body": "backlog_clear()",
+        "description": "Remove all entries from the backlog."
+    },
+    "backlog_post(string params,,,)": {
+        "prefix": "backlog_post",
+        "body": "backlog_post(${1})",
+        "description": "Post a string to the backlog."
+    },
+    "backlog_fontsize(int size)": {
+        "prefix": "backlog_fontsize",
+        "body": "backlog_fontsize(${1})",
+        "description": "Modify the font size of the backlog."
+    },
+    "backlog_isactive()": {
+        "prefix": "backlog_isactive",
+        "body": "backlog_isactive()",
+        "description": "Boolean result -- returns true if the backlog is active, false otherwise."
+    },
+    "backlog_fontrowspacing(float spacing)": {
+        "prefix": "backlog_fontrowspacing",
+        "body": "backlog_fontrowspacing(${1})",
+        "description": "Set a row spacing to the backlog."
+    },
+    "backlog_lock()": {
+        "prefix": "backlog_lock",
+        "body": "backlog_lock()",
+        "description": "Disable and lock the backlog so HOME key doesn't bring it up."
+    },
+    "backlog_unlock()": {
+        "prefix": "backlog_unlock",
+        "body": "backlog_unlock()",
+        "description": "Unlock the backlog so it can be toggled with the HOME key."
+    },
+    "backlog_blocklua()": {
+        "prefix": "backlog_blocklua",
+        "body": "backlog_blocklua()",
+        "description": "Disable LUA code execution in the backlog."
+    },
+    "backlog_unblocklua()": {
+        "prefix": "backlog_unblocklua",
+        "body": "backlog_unblocklua()",
+        "description": "Undisable LUA code execution in the backlog."
+    },
+    // Renderer
+    "GetGameSpeed()": {
+        "prefix": "GetGameSpeed",
+        "body": "GetGameSpeed()",
+        "description": "Float result -- returns game speed."
+    },
+    "SetGameSpeed(float speed)": {
+        "prefix": "SetGameSpeed",
+        "body": "SetGameSpeed(${1})",
+        "description": "Sets the game speed."
+    },
+    "application.GetCanvas().GetLogicalWidth()": {
+        "prefix": "application.GetCanvas().GetLogicalWidth",
+        "body": "application.GetCanvas().GetLogicalWidth()",
+        "description": "Float result -- returns the screen width."
+    },
+    "application.GetCanvas().GetLogicalHeight()": {
+        "prefix": "application.GetCanvas().GetLogicalHeight",
+        "body": "application.GetCanvas().GetLogicalHeight()",
+        "description": "Float result -- returns the screen height."
+    },
+    "HairParticleSettings(opt int lod0, opt int lod1, opt int lod2)": {
+        "prefix": "HairParticleSettings",
+        "body": "HairParticleSettings(${1})",
+        "description": "Settings for hair particle in lod0, lod1 and lod2. [Undocumented assumed result, might need testing]"
+    },
+    "SetShadowProps2D(int resolution)": {
+        "prefix": "SetShadowProps2D",
+        "body": "SetShadowProps2D(${1})",
+        "description": "Set 2d shadow resolution. [Undocumented assumed result, might need testing]"
+    },
+    "SetShadowPropsCube(int resolution)": {
+        "prefix": "SetShadowPropsCube",
+        "body": "SetShadowPropsCube(${1})",
+        "description": "Set shadow resolution for cube. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugPartitionTreeEnabled(bool enabled)": {
+        "prefix": "SetDebugPartitionTreeEnabled",
+        "body": "SetDebugPartitionTreeEnabled(${1})",
+        "description": "Sets debugging for partition tree enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugBonesEnabled(bool enabled)": {
+        "prefix": "SetDebugBonesEnabled",
+        "body": "SetDebugBonesEnabled(${1})",
+        "description": "Sets debugging for bones enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugEmittersEnabled(bool enabled)": {
+        "prefix": "SetDebugEmittersEnabled",
+        "body": "SetDebugEmittersEnabled(${1})",
+        "description": "Sets debugging for emitters enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugEnvProbesEnabled(bool enabled)": {
+        "prefix": "SetDebugEnvProbesEnabled",
+        "body": "SetDebugEnvProbesEnabled(${1})",
+        "description": "Sets debugging for enviromental probes enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugForceFieldsEnabled(bool enabled)": {
+        "prefix": "SetDebugForceFieldsEnabled",
+        "body": "SetDebugForceFieldsEnabled(${1})",
+        "description": "Sets debugging for force fields enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugCamerasEnabled(bool value)": {
+        "prefix": "SetDebugCamerasEnabled",
+        "body": "SetDebugCamerasEnabled(${1})",
+        "description": "Sets debugging for cameras enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDebugCollidersEnabled(bool value)": {
+        "prefix": "SetDebugCollidersEnabled",
+        "body": "SetDebugCollidersEnabled(${1})",
+        "description": "Sets debugging for colliders enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetGridHelperEnabled(bool value)": {
+        "prefix": "SetGridHelperEnabled",
+        "body": "SetGridHelperEnabled(${1})",
+        "description": "Sets the grid helper enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetDDGIDebugEnabled(bool value)": {
+        "prefix": "SetDDGIDebugEnabled",
+        "body": "SetDDGIDebugEnabled(${1})",
+        "description": "Sets debugging for DDGI enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetVSyncEnabled(opt bool enabled)": {
+        "prefix": "SetVSyncEnabled",
+        "body": "SetVSyncEnabled(${1})",
+        "description": "Sets VSync/Virtual synchronization enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetOcclusionCullingEnabled(bool enabled)": {
+        "prefix": "SetOcclusionCullingEnabled",
+        "body": "SetOcclusionCullingEnabled(${1})",
+        "description": "Sets Global Occlusion Culling enabled. [Undocumented assumed result, might need testing]"
+    },
+    "SetMeshShaderAllowed(bool enabled)": {
+        "prefix": "SetMeshShaderAllowed",
+        "body": "SetMeshShaderAllowed(${1})",
+        "description": "Sets Mesh Shaders allowed. [Undocumented assumed result, might need testing]"
+    },
+    "SetMeshletOcclusionCullingEnabled(bool value)": {
+        "prefix": "SetMeshletOcclusionCullingEnabled",
+        "body": "SetMeshletOcclusionCullingEnabled(${1})",
+        "description": "Allows meshes to receive occlusion culling. [Undocumented assumed result, might need testing]"
+    },
+    "DrawLine(Vector origin, end, opt Vector color, opt bool depth = false)": {
+        "prefix": "DrawLine",
+        "body": "DrawLine(${1})",
+        "description": "Draws a line from origin to end you can also specify optional color and optional depth enabled. [Undocumented assumed result, might need testing]"
+    },
+    "DrawPoint(Vector origin, opt float size, opt Vector color, opt bool depth = false)": {
+        "prefix": "DrawPoint",
+        "body": "DrawPoint(${1})",
+        "description": "Draws a point in the specified origin you can also specify optional size, optional color and optional depth enabled. [Undocumented assumed result, might need testing]"
+    },
+    "DrawBox(Matrix boxMatrix, opt Vector color, opt bool depth = true)": {
+        "prefix": "DrawBox",
+        "body": "DrawBox(${1})",
+        "description": "Draws a box you need a matrix for it, you can also specify optional color and optional depth enabled. [Undocumented assumed result, might need testing]"
+    },
+    "DrawSphere(Sphere sphere, opt Vector color, opt bool depth = true)": {
+        "prefix": "DrawSphere",
+        "body": "DrawSphere(${1})",
+        "description": "Draws a sphere you need a sphere for it, you can also specify optional color and optional depth. [Undocumented assumed result, might need testing]"
+    },
+    "DrawDebugText(string text, opt Vector position, opt Vector color, opt float scaling, opt int flags)": {
+        "prefix": "DrawDebugText",
+        "body": "DrawDebugText(${1})",
+        "description": "Draws a text in the specified optional position you can also specify optional color, optional scaling and optional flags. DrawDebugText flags, these can be combined with binary OR operator: [outer]DEBUG_TEXT_DEPTH_TEST -- text can be occluded by geometry [outer]DEBUG_TEXT_CAMERA_FACING -- text will be rotated to face the camera [outer]DEBUG_TEXT_CAMERA_SCALING -- text will be always the same size, independent of distance to camera. [Needs testing]"
+    },
+    "DrawVoxelGrid(VoxelGrid voxelgrid)": {
+        "prefix": "DrawVoxelGrid",
+        "body": "DrawVoxelGrid(${1})",
+        "description": "Draws the voxel grid in the debug rendering phase. VoxelGrid object must not be destroyed until then! [Needs testing]"
+    },
+    "DrawPathQuery(PathQuery pathquery)": {
+        "prefix": "DrawPathQuery",
+        "body": "DrawPathQuery(${1})",
+        "description": "Draws the path query in the debug rendering phase. PathQuery object must not be destroyed until then! [Needs testing]"
+    },
+    "DrawTrail(TrailRenderer trail)": {
+        "prefix": "DrawTrail",
+        "body": "DrawTrail(${1})",
+        "description": "Draws the trail in the debug rendering phase. TrailRenderer object must not be destroyed until then! [Needs testing]"
+    },
+    "PaintIntoTexture(PaintTextureParams params)": {
+        "prefix": "PaintIntoTexture",
+        "body": "PaintIntoTexture(${1})",
+        "description": "Allows to paint into textures with params or ¿Paint textures into the world?. [Undocumented assumed result, might need testing]"
+    },
+    "CreatePaintableTexture(int width, height, opt int mips = 0, opt Vector initialColor = Vector())": {
+        "prefix": "CreatePaintableTexture",
+        "body": "CreatePaintableTexture(${1})",
+        "description": "Creates a texture that can be used for destination of PaintIntoTexture() you need to specify width, height, optional mips and optional initialColor. [Needs testing]"
+    },
+    "PutWaterRipple(Vector position)": {
+        "prefix": "PutWaterRipple",
+        "body": "PutWaterRipple(${1})",
+        "description": "Put down a water ripple with default embedded asset in the specified position you can also specify a string imagename at the start before position. [Needs testing]"
+    },
+    "PutWaterRipple(string imagename, Vector position)": {
+        "prefix": "PutWaterRipple",
+        "body": "PutWaterRipple(${1})",
+        "description": "Put down a water ripple with default embedded asset in the specified position you can also specify a string image. [Needs testing]"
+    },
+    "ClearWorld(opt Scene scene)": {
+        "prefix": "ClearWorld",
+        "body": "ClearWorld(${1})",
+        "description": "Clears the scene and the associated renderer resources. If parameter is not specified, it will clear the global scene. [Needs testing]"
+    },
+    "ReloadShaders()": {
+        "prefix": "ReloadShaders",
+        "body": "ReloadShaders()",
+        "description": "The engine attempts to reload the shaders. [Needs testing]"
+    },
+}
