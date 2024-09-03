@@ -1,0 +1,20 @@
+{
+  "name": "wicked-engine-snippets",
+  "displayName": "Wicked Engine Snippets",
+  "description": "Snippets from wicked engine to use in VSCode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
