@@ -306,4 +306,498 @@
         "body": "ReloadShaders()",
         "description": "The engine attempts to reload the shaders. [Needs testing]"
     },
+    // Paint Texture Params
+    "[constructor]PaintTextureParams": {
+        "prefix": "PaintTextureParams",
+        "body": "PaintTextureParams",
+        "description": "Params for paint texture used in a constructor. [Undocumented assumed result, might need testing]"
+    },
+    "SetEditTexture(Texture tex)": {
+        "prefix": "SetEditTexture",
+        "body": "SetEditTexture(${1})",
+        "description": "Sets edition texture for PaintTextureParams, requires a texture as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushTexture(Texture tex)": {
+        "prefix": "SetBrushTexture",
+        "body": "SetBrushTexture(${1})",
+        "description": "Sets the texture for the paint brush tool, requires a texture as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetRevealTexture(Texture tex)": {
+        "prefix": "SetRevealTexture",
+        "body": "SetRevealTexture(${1})",
+        "description": "Sets reveal texture, requires a texture as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushColor(Vector value)": {
+        "prefix": "SetBrushColor",
+        "body": "SetBrushColor(${1})",
+        "description": "Sets the color for the brush tool, requires a vector color value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetCenterPixel(Vector value)": {
+        "prefix": "SetCenterPixel",
+        "body": "SetCenterPixel(${1})",
+        "description": "Sets the center pixel ¿maybe of the brush tool?, requires a vector value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushRadius(int value)": {
+        "prefix": "SetBrushRadius",
+        "body": "SetBrushRadius(${1})",
+        "description": "Sets the paint brush size, requires an int value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushAmount(float value)": {
+        "prefix": "SetBrushAmount",
+        "body": "SetBrushAmount(${1})",
+        "description": "Sets the amount that the brush can paint, requires a float value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushSmoothness(float value)": {
+        "prefix": "SetBrushSmoothness",
+        "body": "SetBrushSmoothness(${1})",
+        "description": "Sets how smooth the brush is, requires a float value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushRotation(float value)": {
+        "prefix": "SetBrushRotation",
+        "body": "SetBrushRotation(${1})",
+        "description": "Sets the rotation of the brush, requires a float value as argument. [Undocumented assumed result, might need testing]"
+    },
+    "SetBrushShape(int value)": {
+        "prefix": "SetBrushShape",
+        "body": "SetBrushShape(${1})",
+        "description": "Sets the shape of the brush: 0 = circle, 1 = rectangle, requires an int value as argument. [Needs testing]"
+    },
+    // Paint Decal Params
+    "[constructor]PaintDecalParams": {
+        "prefix": "PaintDecalParams",
+        "body": "PaintDecalParams",
+        "description": "Params for paint decal used in a constructor. [Undocumented assumed result, might need testing]"
+    },
+    "SetInTexture(Texture tex)": {
+        "prefix": "SetInTexture",
+        "body": "SetInTexture(${1})",
+        "description": "Set source texture (decal tex) for decals, requires a texture as argument. [Needs testing]"
+    },
+    "SetOutTexture(Texture tex)": {
+        "prefix": "SetOutTexture",
+        "body": "SetOutTexture(${1})",
+        "description": "Set destination texture (object tex) for decals, requires a texture as argument. [Needs testing]"
+    },
+    "SetMatrix(Matrix mat)": {
+        "prefix": "SetMatrix",
+        "body": "SetMatrix(${1})",
+        "description": "Set decal matrix in world space, requires a matrix as argument. [Needs testing]"
+    },
+    "SetObject(Entity entity)": {
+        "prefix": "SetObject",
+        "body": "SetObject(${1})",
+        "description": "Set object entity, the positions and UVs will be taken from this. [Needs testing]"
+    },
+    "SetSlopeBlendPower(float power)": {
+        "prefix": "SetSlopeBlendPower",
+        "body": "SetSlopeBlendPower(${1})",
+        "description": "Adjust fading of the decal based on slope of surface compared to decal projection (default: 0, no slope blend). [Needs testing]"
+    },
+    // Sprite
+    "[constructor]Sprite(opt string texture, opt string maskTexture)": {
+        "prefix": "Sprite",
+        "body": "Sprite(${1})",
+        "description": "Makes a new or use an sprite using texture and maskTexture that will render in the screen. [Undocumented assumed result, might need testing]"
+    },
+    "SetParams(ImageParams effects)": {
+        "prefix": "SetParams",
+        "body": "SetParams(${1})",
+        "description": "Set the params for the sprite made using [constructor]Sprite(opt string texture, opt string maskTexture) you can apply effects with ImageParams. [Undocumented assumed result, might need testing]"
+    },
+    "GetParams()": {
+        "prefix": "GetParams",
+        "body": "GetParams()",
+        "description": "Returns ImageParams result of the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "SetAnim(SpriteAnim anim)": {
+        "prefix": "SetAnim",
+        "body": "SetAnim(${1})",
+        "description": "Sets an animation to the sprite using SpriteAnim as argument. [Undocumented assumed result, might need testing]"
+    },
+    "GetAnim()": {
+        "prefix": "GetAnim",
+        "body": "GetAnim()",
+        "description": "Returns SpriteAnim result from the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "SetTexture(Texture texture)": {
+        "prefix": "SetTexture",
+        "body": "SetTexture(${1})",
+        "description": "Sets a texture to the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "GetTexture()": {
+        "prefix": "GetTexture",
+        "body": "GetTexture()",
+        "description": "Returns the texture of the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "SetMaskTexture(Texture texture)": {
+        "prefix": "SetMaskTexture",
+        "body": "SetMaskTexture(${1})",
+        "description": "Sets a mask texture to the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "GetMaskTexture()": {
+        "prefix": "GetMaskTexture",
+        "body": "GetMaskTexture()",
+        "description": "Returns the mask texture of the sprite. [Undocumented assumed result, might need testing]"
+    },
+    "SetBackgroundTexture(Texture texture)": {
+        "prefix": "SetBackgroundTexture",
+        "body": "SetBackgroundTexture(${1})",
+        "description": "¿Sets the background texture of the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetBackgroundTexture()": {
+        "prefix": "GetBackgroundTexture",
+        "body": "GetBackgroundTexture()",
+        "description": "¿Returns the background texture of the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "SetHidden(bool value)": {
+        "prefix": "SetHidden",
+        "body": "SetHidden(${1})",
+        "description": "¿Sets if the sprite is renderer or not?. [Undocumented assumed result, might need testing]"
+    },
+    "IsHidden()": {
+        "prefix": "IsHidden",
+        "body": "IsHidden()",
+        "description": "¿Returns if the sprite is Hidden or not?. [Undocumented assumed result, might need testing]"
+    },
+    // Image Params
+    "[constructor]ImageParams(opt float width, opt float height)": {
+        "prefix": "ImageParams",
+        "body": "ImageParams(${1})",
+        "description": "Specify Sprite properties, like position, size, etc... [Undocumented assumed result, might need testing]"
+    },
+    "[constructor]ImageParams(float posX, float posY, float width, opt float height)": {
+        "prefix": "ImageParams",
+        "body": "ImageParams(${1})",
+        "description": "Same as ImageParams but you can specify posX and posY. [Undocumented assumed result, might need testing]"
+    },
+    "GetPos()": {
+        "prefix": "GetPos",
+        "body": "GetPos()",
+        "description": "¿Returns a Vector result of the position from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetSize()": {
+        "prefix": "GetSize",
+        "body": "GetSize()",
+        "description": "¿Returns a Vector result of the size from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetPivot()": {
+        "prefix": "GetPivot",
+        "body": "GetPivot()",
+        "description": "¿Returns a Vector result of the pivot from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetOpacity()": {
+        "prefix": "GetOpacity",
+        "body": "GetOpacity()",
+        "description": "¿Returns a Float result of the opacity from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetFade()": {
+        "prefix": "GetFade",
+        "body": "GetFade()",
+        "description": "¿Returns a Float result of the fading from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetRotation()": {
+        "prefix": "GetRotation",
+        "body": "GetRotation()",
+        "description": "¿Returns a Float result of the rotation from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetMipLevel()": {
+        "prefix": "GetMipLevel",
+        "body": "GetMipLevel()",
+        "description": "¿Returns a Float result of the mip level from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetTexOffset()": {
+        "prefix": "GetTexOffset",
+        "body": "GetTexOffset()",
+        "description": "¿Returns a Vector result of the texture offset from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetTexOffset2()": {
+        "prefix": "GetTexOffset2",
+        "body": "GetTexOffset2()",
+        "description": "¿Returns a Vector result of the texture offset with only 2 from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetBorderSoften()": {
+        "prefix": "GetBorderSoften",
+        "body": "GetBorderSoften()",
+        "description": "¿Returns a Float result with how smooth the border is from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetDrawRect()": {
+        "prefix": "GetDrawRect",
+        "body": "GetDrawRect()",
+        "description": "¿Returns a Vector result with the Rect from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "GetDrawRect2()": {
+        "prefix": "GetDrawRect2",
+        "body": "GetDrawRect2()",
+        "description": "¿Returns a Vector result with the Rect but only 2 from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "IsDrawRectEnabled()": {
+        "prefix": "IsDrawRectEnabled",
+        "body": "IsDrawRectEnabled()",
+        "description": "¿Returns a Bool result checking if the Rect is enabled from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "IsDrawRect2Enabled()": {
+        "prefix": "IsDrawRect2Enabled",
+        "body": "IsDrawRect2Enabled()",
+        "description": "¿Returns a Bool result checking if the Rect is enabled but only 2 from the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "IsMirrorEnabled()": {
+        "prefix": "IsMirrorEnabled",
+        "body": "IsMirrorEnabled()",
+        "description": "¿Returns a Bool result checking if mirroring is enabled?. [Undocumented assumed result, might need testing]"
+    },
+    "IsBackgroundEnabled()": {
+        "prefix": "IsBackgroundEnabled",
+        "body": "IsBackgroundEnabled()",
+        "description": "¿Returns a Bool result checking if background is enabled?. [Undocumented assumed result, might need testing]"
+    },
+    "IsDistortionMaskEnabled()": {
+        "prefix": "IsDistortionMaskEnabled",
+        "body": "IsDistortionMaskEnabled()",
+        "description": "¿Returns a Bool result checking if distortion mask is enabled?. [Undocumented assumed result, might need testing]"
+    },
+    "SetPos(Vector pos)": {
+        "prefix": "SetPos",
+        "body": "SetPos(${1})",
+        "description": "¿Sets the position of the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "SetSize(Vector size)": {
+        "prefix": "SetSize",
+        "body": "SetSize(${1})",
+        "description": "¿Sets the size of the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "SetPivot(Vector value)": {
+        "prefix": "SetPivot",
+        "body": "SetPivot(${1})",
+        "description": "¿Sets the pivot of the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "SetColor(Vector value)": {
+        "prefix": "SetColor",
+        "body": "SetColor(${1})",
+        "description": "¿Sets the color of the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "SetOpacity(float opacity)": {
+        "prefix": "SetOpacity",
+        "body": "SetOpacity(${1})",
+        "description": "¿Sets the opacity of the sprite with a Float?. [Undocumented assumed result, might need testing]"
+    },
+    "SetFade(float fade)": {
+        "prefix": "SetFade",
+        "body": "SetFade(${1})",
+        "description": "¿Sets fading of the sprite with a Float?. [Undocumented assumed result, might need testing]"
+    },
+    "SetStencil(int stencilMode, stencilRef)": {
+        "prefix": "SetStencil",
+        "body": "SetStencil(${1})",
+        "description": "¿Sets stencil with an Int and reference?. [Undocumented assumed result, might need testing]"
+    },
+    "SetStencilRefMode(int stencilrefmode)": {
+        "prefix": "SetStencilRefMode",
+        "body": "SetStencilRefMode(${1})",
+        "description": "¿Sets stencil reference mode with an Int?. [Undocumented assumed result, might need testing]"
+    },
+    "SetBlendMode(int blendMode)": {
+        "prefix": "SetBlendMode",
+        "body": "SetBlendMode(${1})",
+        "description": "¿Sets blend mode for the sprite with an Int?. [Undocumented assumed result, might need testing]"
+    },
+    "SetQuality(int quality)": {
+        "prefix": "SetQuality",
+        "body": "SetQuality(${1})",
+        "description": "¿Sets the graphics quality with an Int?. [Undocumented assumed result, might need testing]"
+    },
+    "SetSampleMode(int sampleMode)": {
+        "prefix": "SetSampleMode",
+        "body": "SetSampleMode(${1})",
+        "description": "¿Sets the sample mode with an Int?. [Undocumented assumed result, might need testing]"
+    },
+    "SetRotation(float rotation)": {
+        "prefix": "SetRotation",
+        "body": "SetRotation(${1})",
+        "description": "¿Sets the rotation for the sprite with a Float?. [Undocumented assumed result, might need testing]"
+    },
+    "SetMipLevel(float mipLevel)": {
+        "prefix": "SetMipLevel",
+        "body": "SetMipLevel(${1})",
+        "description": "¿Sets the mip level with a Float?. [Undocumented assumed result, might need testing]"
+    },
+    "SetTexOffset()": {
+        "prefix": "SetTexOffset",
+        "body": "SetTexOffset(${1})",
+        "description": "¿Sets texture offset? ¿But it might require some argument?. [Undocumented assumed result, might need testing]"
+    },
+    "SetTexOffset2()": {
+        "prefix": "SetTexOffset2",
+        "body": "SetTexOffset2(${1})",
+        "description": "¿Sets texture offset for only 2? ¿But it might require some argument?. [Undocumented assumed result, might need testing]"
+    },
+    "SetBorderSoften(float alpha)": {
+        "prefix": "SetBorderSoften",
+        "body": "SetBorderSoften(${1})",
+        "description": "¿Sets how smooth the sprite border is with a Float?. [Undocumented assumed result, might need testing]"
+    },
+    "EnableDrawRect(Vector value)": {
+        "prefix": "EnableDrawRect",
+        "body": "EnableDrawRect(${1})",
+        "description": "¿Enables drawing a rect for the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "EnableDrawRect2(Vector value)": {
+        "prefix": "EnableDrawRect2",
+        "body": "EnableDrawRect2(${1})",
+        "description": "¿Enables drawing a rect only 2 for the sprite with a Vector?. [Undocumented assumed result, might need testing]"
+    },
+    "DisableDrawRect()": {
+        "prefix": "DisableDrawRect",
+        "body": "DisableDrawRect()",
+        "description": "¿Disables drawing a rect maybe globally or for a sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "DisableDrawRect2()": {
+        "prefix": "DisableDrawRect2",
+        "body": "DisableDrawRect2()",
+        "description": "¿Disables drawing a rect only 2 maybe globally or for a sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "EnableMirror()": {
+        "prefix": "EnableMirror",
+        "body": "EnableMirror()",
+        "description": "¿Enables mirroring in the engine?. [Undocumented assumed result, might need testing]"
+    },
+    "DisableMirror()": {
+        "prefix": "DisableMirror",
+        "body": "DisableMirror()",
+        "description": "¿Disables mirroring in the engine?. [Undocumented assumed result, might need testing]"
+    },
+    "EnableBackground()": {
+        "prefix": "EnableBackground",
+        "body": "EnableBackground()",
+        "description": "¿Enables background for the engine or maybe a sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "DisableBackground()": {
+        "prefix": "DisableBackground",
+        "body": "DisableBackground()",
+        "description": "¿Disables background for the engine or maybe a sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "EnableDistortionMask()": {
+        "prefix": "EnableDistortionMask",
+        "body": "EnableDistortionMask()",
+        "description": "¿Enables distortion mask for the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "DisableDistortionMask()": {
+        "prefix": "DisableDistortionMask",
+        "body": "DisableDistortionMask()",
+        "description": "¿Disables distortion mask for the sprite?. [Undocumented assumed result, might need testing]"
+    },
+    "SetMaskAlphaRange(float start, end)": {
+        "prefix": "SetMaskAlphaRange",
+        "body": "SetMaskAlphaRange(${1})",
+        "description": "¿Sets mask alpha range maybe globally or for a sprite requires float start and end?. [Undocumented assumed result, might need testing]"
+    },
+    "GetMaskAlphaRange()": {
+        "prefix": "GetMaskAlphaRange",
+        "body": "GetMaskAlphaRange()",
+        "description": "¿Returns mask alpha range float start and end?. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_DISABLED : int": {
+        "prefix": "STENCILMODE_DISABLED",
+        "body": "STENCILMODE_DISABLED",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_EQUAL : int": {
+        "prefix": "STENCILMODE_EQUAL",
+        "body": "STENCILMODE_EQUAL",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_LESS : int": {
+        "prefix": "STENCILMODE_LESS",
+        "body": "STENCILMODE_LESS",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_LESSEQUAL : int": {
+        "prefix": "STENCILMODE_LESSEQUAL",
+        "body": "STENCILMODE_LESSEQUAL",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_GREATER : int": {
+        "prefix": "STENCILMODE_GREATER",
+        "body": "STENCILMODE_GREATER",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_GREATEREQUAL : int": {
+        "prefix": "STENCILMODE_GREATEREQUAL",
+        "body": "STENCILMODE_GREATEREQUAL",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILMODE_NOT : int": {
+        "prefix": "STENCILMODE_NOT",
+        "body": "STENCILMODE_NOT",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILREFMODE_ENGINE : int": {
+        "prefix": "STENCILREFMODE_ENGINE",
+        "body": "STENCILREFMODE_ENGINE",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILREFMODE_USER : int": {
+        "prefix": "STENCILREFMODE_USER",
+        "body": "STENCILREFMODE_USER",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]STENCILREFMODE_ALL : int": {
+        "prefix": "STENCILREFMODE_ALL",
+        "body": "STENCILREFMODE_ALL",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]SAMPLEMODE_CLAMP : int": {
+        "prefix": "SAMPLEMODE_CLAMP",
+        "body": "SAMPLEMODE_CLAMP",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]SAMPLEMODE_WRAP : int": {
+        "prefix": "SAMPLEMODE_WRAP",
+        "body": "SAMPLEMODE_WRAP",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]SAMPLEMODE_MIRROR : int": {
+        "prefix": "SAMPLEMODE_MIRROR",
+        "body": "SAMPLEMODE_MIRROR",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]QUALITY_NEAREST : int": {
+        "prefix": "QUALITY_NEAREST",
+        "body": "QUALITY_NEAREST",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]QUALITY_LINEAR : int": {
+        "prefix": "QUALITY_LINEAR",
+        "body": "QUALITY_LINEAR",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]QUALITY_ANISOTROPIC : int": {
+        "prefix": "QUALITY_ANISOTROPIC",
+        "body": "QUALITY_ANISOTROPIC",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]QUALITY_BICUBIC : int": {
+        "prefix": "QUALITY_BICUBIC",
+        "body": "QUALITY_BICUBIC",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]BLENDMODE_OPAQUE : int": {
+        "prefix": "BLENDMODE_OPAQUE",
+        "body": "BLENDMODE_OPAQUE",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]BLENDMODE_ALPHA : int": {
+        "prefix": "BLENDMODE_ALPHA",
+        "body": "BLENDMODE_ALPHA",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]BLENDMODE_PREMULTIPLIED : int": {
+        "prefix": "BLENDMODE_PREMULTIPLIED",
+        "body": "BLENDMODE_PREMULTIPLIED",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
+    "[outer]BLENDMODE_ADDITIVE : int": {
+        "prefix": "BLENDMODE_ADDITIVE",
+        "body": "BLENDMODE_ADDITIVE",
+        "description": "Outer - The method or value is in the global scope, so not a method of any objects. [Undocumented assumed result, might need testing]"
+    },
 }
